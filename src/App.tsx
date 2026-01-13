@@ -13,14 +13,60 @@ export default function App() {
     const [videoEnded, setVideoEnded] = useState(false);
     const [showAraliaModal, setShowAraliaModal] = useState(false); // AGREGAR AQUÍ
     const [showMirelModal, setShowMirelModal] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
+    const scrollRAF = useRef<number | null>(null);
+    const lastUpdateTime = useRef<number>(0);
+    const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
+    // Detect system theme preference
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        // Set initial theme based on system preference
+        setTheme(mediaQuery.matches ? 'dark' : 'light');
+        
+        // Listen for changes in system preference
+        const handleChange = (e: MediaQueryListEvent) => {
+            setTheme(e.matches ? 'dark' : 'light');
+        };
+        
+        mediaQuery.addEventListener('change', handleChange);
+        
+        return () => {
+            mediaQuery.removeEventListener('change', handleChange);
+        };
+    }, []);
+
+    // Apply theme to document
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme]);
+
+    // Load video immediately for hero section
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (!video) return;
+
+        // Load video immediately since it's the hero section
+        video.load();
+        setVideoLoaded(true);
+    }, []);
+
+    // Optimized scroll handler with requestAnimationFrame throttling
     useEffect(() => {
         const video = videoRef.current;
         const container = containerRef.current;
 
         if (!video || !container) return;
 
-        const handleScroll = () => {
+        let ticking = false;
+
+        const updateVideoTime = () => {
             const containerRect = container.getBoundingClientRect();
             const containerTop = containerRect.top;
             const containerHeight = containerRect.height;
@@ -28,11 +74,21 @@ export default function App() {
 
             const scrollProgress = Math.max(0, Math.min(1, -containerTop / (containerHeight - windowHeight)));
 
-            if (video.duration) {
-                const targetTime = scrollProgress * video.duration;
+            if (video.duration && video.readyState >= 2) {
+                // Start video at 1 second and end at duration
+                const videoStartTime = 0;
+                const videoPlayDuration = video.duration - videoStartTime;
+                const targetTime = videoStartTime + (scrollProgress * videoPlayDuration);
+                const currentTime = video.currentTime;
 
-                if (Math.abs(video.currentTime - targetTime) > 0.1) {
-                    video.currentTime = targetTime;
+                // Reduce precision - only update if difference is > 0.2s
+                if (Math.abs(currentTime - targetTime) > 0.2) {
+                    const now = performance.now();
+                    // Throttle updates to max 30fps (every ~33ms)
+                    if (now - lastUpdateTime.current > 33) {
+                        video.currentTime = targetTime;
+                        lastUpdateTime.current = now;
+                    }
                 }
 
                 if (scrollProgress >= 0.99) {
@@ -41,15 +97,28 @@ export default function App() {
                     setVideoEnded(false);
                 }
             }
+
+            ticking = false;
         };
 
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
+        const handleScroll = () => {
+            if (!ticking) {
+                scrollRAF.current = requestAnimationFrame(updateVideoTime);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        // Initial call
+        updateVideoTime();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            if (scrollRAF.current) {
+                cancelAnimationFrame(scrollRAF.current);
+            }
         };
-    }, []);
+    }, [videoLoaded]);
 
     return (
         <>
@@ -146,8 +215,15 @@ export default function App() {
 
                 {/* Hero Section con Video Scroll */}
                 <section ref={containerRef} className="relative h-[300vh]">
-                    <div className="sticky top-0 h-screen w-full overflow-hidden">
-                        <video ref={videoRef} className="absolute inset-0 h-full w-full object-cover" playsInline muted preload="auto">
+                    <div className="sticky top-0 h-screen w-full overflow-hidden bg-white dark:bg-[#0a0a0a]">
+                        <video 
+                            ref={videoRef} 
+                            className="absolute inset-0 h-full w-full object-cover" 
+                            playsInline 
+                            muted 
+                            preload="auto"
+                            style={{ backgroundColor: theme === 'dark' ? '#0a0a0a' : 'white' }}
+                        >
                             <source src="/videos/hero-video.mp4" type="video/mp4" />
                             Tu navegador no soporta el elemento de video.
                         </video>
@@ -165,7 +241,7 @@ export default function App() {
 
                         {!videoEnded && (
                             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-                                <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="h-8 w-8 text-[#055c9d] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                                 </svg>
                             </div>
@@ -505,7 +581,7 @@ export default function App() {
                 </section>
 
                 {/* CTA Section */}
-                <section className="bg-gradient-to-r from-[#055c9d] to-[#05c7d] px-6 py-20 lg:px-8 dark:from-[#055c9d] dark:to-[#55c7d]">
+                <section className="bg-gradient-to-r from-[#055c9d] to-[#0577d4] px-6 py-20 lg:px-8 dark:from-[#044a7d] dark:to-[#055c9d]">
                     <div className="mx-auto max-w-4xl text-center text-white">
                         <h2 className="mb-4 text-3xl font-semibold lg:text-5xl">¿Listo para comenzar?</h2>
                         <p className="mb-8 text-lg opacity-90">Únete a este gran equipo de atletas, entrenadores y familias ganadoras</p>
@@ -513,13 +589,13 @@ export default function App() {
                             href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block rounded-sm border-2 border-white bg-white px-8 py-3 text-sm leading-normal font-medium text-[#1b1b18] hover:bg-transparent hover:text-white"
+                            className="inline-block rounded-sm border-2 border-white bg-white px-8 py-3 text-sm leading-normal font-medium text-[#055c9d] hover:bg-transparent hover:text-white dark:border-white dark:bg-white dark:text-[#055c9d] dark:hover:bg-transparent dark:hover:text-white"
                         >
                             Comenzar
                         </Link>
                     </div>
 
-                    <div className="mt-12 pt-8 text-center text-sm text-white dark:border-[#3E3E3A] dark:text-[#A1A09A]">
+                    <div className="mt-12 pt-8 text-center text-sm text-white opacity-90 dark:text-white dark:opacity-90">
                         © 2025 Psidex. Todos los derechos reservados.
                     </div>
                 </section>
