@@ -1,12 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 
-// Simulando los imports de Inertia
-const Head = ({ children }: any) => <>{children}</>;
-const Link = ({ href, className, children }: any) => (
-    <a href={href} className={className}>{children}</a>
-);
-
-
 export default function App() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -122,11 +115,6 @@ export default function App() {
 
     return (
         <>
-            <Head title="Welcome">
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-            </Head>
-
             <div className="flex min-h-screen flex-col bg-[#FDFDFC] text-[#1b1b18] dark:bg-[#0a0a0a] dark:text-[#EDEDEC]">
                 {/* Navbar */}
                 <header className="fixed top-0 z-50 w-full border-b border-[#19140035] bg-white/80 backdrop-blur-sm dark:border-[#3E3E3A] dark:bg-[#0a0a0a]/80">
@@ -189,7 +177,7 @@ export default function App() {
                     </a>
 
                     <a
-                        href="https://wa.me/1234567890"
+                        href="https://wa.me/5219511899817?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-all hover:scale-110 hover:shadow-xl"
@@ -585,14 +573,14 @@ export default function App() {
                     <div className="mx-auto max-w-4xl text-center text-white">
                         <h2 className="mb-4 text-3xl font-semibold lg:text-5xl">¿Listo para comenzar?</h2>
                         <p className="mb-8 text-lg opacity-90">Únete a este gran equipo de atletas, entrenadores y familias ganadoras</p>
-                        <Link
-                            href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios"
+                        <a
+                            href="https://wa.me/5219511899817?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block rounded-sm border-2 border-white bg-white px-8 py-3 text-sm leading-normal font-medium text-[#055c9d] hover:bg-transparent hover:text-white dark:border-white dark:bg-white dark:text-[#055c9d] dark:hover:bg-transparent dark:hover:text-white"
                         >
                             Comenzar
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="mt-12 pt-8 text-center text-sm text-white opacity-90 dark:text-white dark:opacity-90">
