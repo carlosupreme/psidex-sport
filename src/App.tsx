@@ -1,4 +1,26 @@
 import { useEffect, useRef, useState } from 'react';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+const responsive = {
+    superLargeDesktop: {
+        // the naming can be any, depends on you.
+        breakpoint: { max: 4000, min: 3000 },
+        items: 1
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 1
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 1
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
 
 export default function App() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -14,17 +36,17 @@ export default function App() {
     // Detect system theme preference
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        
+
         // Set initial theme based on system preference
         setTheme(mediaQuery.matches ? 'dark' : 'light');
-        
+
         // Listen for changes in system preference
         const handleChange = (e: MediaQueryListEvent) => {
             setTheme(e.matches ? 'dark' : 'light');
         };
-        
+
         mediaQuery.addEventListener('change', handleChange);
-        
+
         return () => {
             mediaQuery.removeEventListener('change', handleChange);
         };
@@ -204,11 +226,11 @@ export default function App() {
                 {/* Hero Section con Video Scroll */}
                 <section ref={containerRef} className="relative h-[300vh]">
                     <div className="sticky top-0 h-screen w-full overflow-hidden bg-white dark:bg-[#0a0a0a]">
-                        <video 
-                            ref={videoRef} 
-                            className="absolute inset-0 h-full w-full object-cover" 
-                            playsInline 
-                            muted 
+                        <video
+                            ref={videoRef}
+                            className="absolute inset-0 h-full w-full object-cover"
+                            playsInline
+                            muted
                             preload="auto"
                             style={{ backgroundColor: theme === 'dark' ? '#0a0a0a' : 'white' }}
                         >
@@ -372,34 +394,45 @@ export default function App() {
                 </section>
 
                 <section id="about" className="bg-white px-6 py-20 lg:px-8 dark:bg-[#161615]">
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid items-center gap-12 p-5 lg:grid-cols-2">
-                            <div className="order-2 lg:order-1">
-                                <img
-                                    src="/images/equipo.png"
-                                    alt="About our platform"
-                                    className="aspect-square w-full overflow-hidden rounded-lg object-cover shadow-2xl"
-                                />
+                    <div className="mx-auto max-w-7xl grid items-center gap-12 p-5 lg:grid-cols-2">
+                        <div className="order-2 lg:order-1 w-full min-w-0">
+                            <div className="w-full min-w-0">
+                                <Carousel
+                                    swipeable={true}
+                                    draggable={true}
+                                    showDots={true}
+                                    infinite={true}
+                                    autoPlay={true}
+                                    autoPlaySpeed={2000}
+                                    containerClass="carousel-container"
+                                    itemClass="carousel-item-padding"
+                                    responsive={responsive}>
+                                    <div>
+                                        <img
+                                            src="/images/equipo_foto1_150126.jpeg"
+                                            alt="Carrera del dia del psicologo"
+                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
+                                        />
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="/images/equipo_foto2_150126.jpeg"
+                                            alt="Carrera del dia del psicologo"
+                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
+                                        />
+                                    </div>
+                                </Carousel>
                             </div>
-                            <div className="order-1 lg:order-2">
-                                <h2 className="mb-6 text-3xl font-semibold lg:text-5xl">Equipo del mes</h2>
-                                <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A]">
-                                    <p>Psidex presente en el Taekwondo 🥋✨</p>
-                                    <p>
-                                        Este domingo estuvimos presentes en la primera plática para padres de familia con el equipo de Taekwondo Moo
-                                        Duk Kwan.
-                                    </p>
-                                    <p>
-                                        Fue un espacio muy valioso donde compartimos la importancia de la psicología del deporte en disciplinas de
-                                        contacto, y el rol fundamental que tienen las madres y padres en el desarrollo integral de sus hijos dentro
-                                        del deporte, acompañando no solo el rendimiento físico, sino también la disciplina, la resiliencia y la
-                                        formación de valores que los acompañarán dentro y fuera de la competencia.
-                                    </p>
-                                    <p>
-                                        Agradecemos profundamente al entrenador por abrirnos las puertas y confiar en nuestro trabajo. Seguimos
-                                        sumando esfuerzos para acompañar a las familias y atletas en su crecimiento deportivo y personal. 💪🧠
-                                    </p>
-                                </div>
+                        </div>
+                        <div className="order-1 lg:order-2">
+                            <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Carrera del día del psicólogo</h2>
+                            <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">
+                                <p className="wrap-break-word">
+                                    Los sueños se construyen cuando los padres creen, apoyan y caminan junto a sus hijos. En PSIDEX fortalecemos el deporte desde el entrenamiento mental y el respaldo familiar,
+                                    formando atletas con carácter, confianza y visión.
+                                </p>
+                                <p className="wrap-break-word">PSIDEX presente en el programa Entretiempo: llevando el entrenamiento mental al centro del deporte y presentando la Carrera del Día del Psicólogo, un evento que impulsó el rendimiento, la conciencia y la fuerza mental dentro y fuera de la cancha.
+                                </p>
                             </div>
                         </div>
                     </div>

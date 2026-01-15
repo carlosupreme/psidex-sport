@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* Carousel responsive fixes */
+.carousel-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item-padding {
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow from the track on small screens */
+.react-multi-carousel-list {
+    overflow: hidden;
+}
+
+.carousel-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .carousel-item-padding {
+        padding: 0 4px;
+    }
+}
