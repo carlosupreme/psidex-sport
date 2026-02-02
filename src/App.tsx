@@ -409,7 +409,7 @@ export default function App() {
                                     responsive={responsive}>
                                     <div>
                                         <img
-                                            src="/images/624083651_1441915400689567_8933395071777589278_n.jpg"
+                                            src="/images/Daniela.jpg"
                                             alt="Carrera del dia del psicologo"
                                             className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
                                         />
