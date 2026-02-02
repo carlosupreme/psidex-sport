@@ -425,7 +425,7 @@ export default function App() {
                             </div>
                         </div>
                         <div className="order-1 lg:order-2">
-                            <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Carrera del día del psicólogo</h2>
+                            <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Psidex Sport este mes:</h2>
                             <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">
                                 <p className="wrap-break-word text-justify">
                                     ¡Felicidades, Dulce Fátima! 🏅🎉
