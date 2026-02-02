@@ -409,14 +409,14 @@ export default function App() {
                                     responsive={responsive}>
                                     <div>
                                         <img
-                                            src="/images/equipo_foto1_150126.jpeg"
+                                            src="/images/624083651_1441915400689567_8933395071777589278_n.jpg"
                                             alt="Carrera del dia del psicologo"
                                             className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
                                         />
                                     </div>
                                     <div>
                                         <img
-                                            src="/images/equipo_foto2_150126.jpeg"
+                                            src="/images/619401456_1673168293655672_8833248413206049775_n.jpg"
                                             alt="Carrera del dia del psicologo"
                                             className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
                                         />
@@ -428,19 +428,18 @@ export default function App() {
                             <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Carrera del día del psicólogo</h2>
                             <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">
                                 <p className="wrap-break-word text-justify">
-                                CUIDAR LA MENTE DESDE TEMPRANO: EL ROL DEL PSICÓLOGO DEL DEPORTE EN LA FORMACIÓN DE ATLETAS JÓVENES EN MÉXICO
-<br /> <br />En México, el psicólogo del deporte ha ido ganando presencia dentro de clubes, academias y federaciones deportivas, impulsado por la creciente conciencia sobre la importancia de la salud mental y el bienestar integral de los atletas. Sin embargo, a pesar de los avances, todavía son muchas las entidades deportivas que no cuentan con un psicólogo del deporte de referencia que acompañe de manera sistemática los procesos de entrenamiento, competencia y desarrollo humano.
-El rol del psicólogo del deporte va mucho más allá de la intervención en momentos de crisis o bajo rendimiento. Su función principal es crear, fortalecer y sostener ambientes deportivos saludables, donde el rendimiento y la salud mental no se perciban como opuestos, sino como dimensiones complementarias. En este sentido, el psicólogo trabaja de forma preventiva y formativa, desarrollando habilidades psicológicas como la concentración, la regulación emocional, la motivación, la autoconfianza y la resiliencia.
-<br /> <br />
-En el contexto mexicano, caracterizado por una alta exigencia competitiva, desigualdades en el acceso a recursos y, en muchos casos, una cultura deportiva centrada únicamente en el resultado, el psicólogo del deporte cumple también un rol educativo y cultural. Colabora con entrenadores, directivos y familias para promover estilos de liderazgo más empáticos, una comunicación efectiva y prácticas que prevengan el burnout, la ansiedad competitiva y el abandono deportivo, especialmente en niños y adolescentes.
-<br /><br />
-Dentro de clubes y federaciones, su presencia permite establecer protocolos claros de atención psicológica, detección temprana de riesgos psicosociales y acompañamiento en transiciones clave, como lesiones, cambios de categoría, selecciones nacionales o retiro deportivo. Asimismo, contribuye a fortalecer la identidad del equipo, el sentido de pertenencia y los valores éticos del deporte.
-En este contexto de crecimiento  de la psicología del deporte en México, resulta fundamental contar con profesionales especializados que comprendan la complejidad del rendimiento deportivo y la salud mental.
-La Psicóloga deportiva Aralia Velasco , experta en psicología deportiva y fundadora de PSIDEX, representa un referente en este ámbito, al liderar un equipo de especialistas en psicología enfocado en el acompañamiento integral de los deportistas.
-<br /> <br />
-A través de un trabajo profesional y ético, PSIDEX, respaldado por un equipo de psicólogas especializadas en psicología del deporte, brinda seguimiento psicológico continuo a atletas, entrenadores y familias, reconociendo que el rendimiento deportivo es el resultado de un equilibrio entre mente, cuerpo y entorno. Mediante estrategias psicológicas adecuadas, personalizadas y basadas en evidencia, su labor se centra en potenciar las habilidades mentales durante el entrenamiento y la competencia, favoreciendo no solo mejores resultados, sino también el bienestar y el desarrollo humano de quienes forman parte del deporte. De esta manera, la psicología deportiva se consolida como una herramienta clave para construir entornos deportivos más saludables, conscientes y sostenibles.
-                                
+                                    ¡Felicidades, Dulce Fátima! 🏅🎉
+                                    Queremos felicitarte por este gran logro obtenido en la Etapa Estatal de la Olimpiada Nacional CONADE 2026.
+                                    Tu perseverancia, disciplina y compromiso han sido clave para seguir avanzando hacia lo que sueñas.
+                                    Recuerda: la constancia es la que convierte el esfuerzo en maestría, y tú eres un gran ejemplo de ello 💪✨
+                                    Todo el equipo de PSIDEX se siente profundamente orgulloso de ti y de cada uno de los logros que has construido con trabajo y corazón.
+                                    ¡Vamos por más!
                                 </p>
+
+                                    <p>
+                                        Psidexsport celebra la colaboración con Panteritas Oaxaca, las alianzas entre entes deportivos oaxaqueños son esenciales
+                                        #Psicologiadeportiva #Oaxaca #Panteritas
+                                    </p>
                             </div>
                         </div>
                     </div>
