@@ -427,6 +427,8 @@ export default function App() {
                         <div className="order-1 lg:order-2">
                             <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Burnout, cortisol y la importancia de la desintoxicación emocional en el atleta</h2>
                             <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">
+                                <h3><strong>Psic. Aralia Velasco</strong></h3>
+                                <h3><strong> Especialista en psicología deportiva</strong> </h3>
                                 <p className="wrap-break-word text-justify">
                                     En el alto rendimiento, el estrés no siempre es el enemigo. En dosis adecuadas, el cortisol —la
                                     hormona asociada a la activación y la respuesta ante el desafío— permite al atleta estar alerta,
