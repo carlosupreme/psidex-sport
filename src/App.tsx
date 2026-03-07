@@ -491,7 +491,7 @@ export default function App() {
         </span>
 
                         <h2 className="mb-6 text-4xl font-bold leading-tight text-[#1b1b18] lg:text-6xl dark:text-[#EDEDEC]">
-                            ¿Tu equipo listo para{' '}
+                            ¿Tu equipo está listo para{' '}
                             <span className="relative inline-block text-[#055c9d]">
                 ganar en equipo?
                 <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
