@@ -409,14 +409,21 @@ export default function App() {
                                     responsive={responsive}>
                                     <div>
                                         <img
-                                            src="/images/febrero2.jpg"
+                                            src="/images/convenio1.jpg"
                                             alt="Carrera del dia del psicologo"
                                             className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
                                         />
                                     </div>
                                     <div>
                                         <img
-                                            src="/images/febrero.jpg"
+                                            src="/images/convenio2.jpeg"
+                                            alt="Carrera del dia del psicologo"
+                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
+                                        />
+                                    </div>
+                                    <div>
+                                        <img
+                                            src="/images/convenio3.jpeg"
                                             alt="Carrera del dia del psicologo"
                                             className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
                                         />
