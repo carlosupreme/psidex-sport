@@ -409,13 +409,6 @@ export default function App() {
                                     responsive={responsive}>
                                     <div>
                                         <img
-                                            src="/images/convenio1.jpg"
-                                            alt="Carrera del dia del psicologo"
-                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
-                                        />
-                                    </div>
-                                    <div>
-                                        <img
                                             src="/images/convenio2.jpeg"
                                             alt="Carrera del dia del psicologo"
                                             className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
@@ -431,55 +424,85 @@ export default function App() {
                                 </Carousel>
                             </div>
                         </div>
-                        <div className="order-1 lg:order-2">
-                            <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Burnout, cortisol y la importancia de la desintoxicación emocional en el atleta</h2>
-                            <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">
-                                <h3><strong>Psic. Aralia Velasco</strong></h3>
-                                <h3><strong> Especialista en psicología deportiva</strong> </h3>
-                                <p className="wrap-break-word text-justify">
-                                    En el alto rendimiento, el estrés no siempre es el enemigo. En dosis adecuadas, el cortisol —la
-                                    hormona asociada a la activación y la respuesta ante el desafío— permite al atleta estar alerta,
-                                    concentrado y preparado para competir.
-                                    El problema surge cuando esta activación se vuelve crónica.
-                                </p>
+                        <div className="order-2 lg:order-1 w-full min-w-0">
+                            <div className="w-full min-w-0">
+                                <Carousel
+                                    swipeable={true}
+                                    draggable={true}
+                                    showDots={true}
+                                    infinite={true}
+                                    autoPlay={true}
+                                    autoPlaySpeed={2000}
+                                    containerClass="carousel-container"
+                                    itemClass="carousel-item-padding"
+                                    responsive={responsive}>
+                                    <div>
+                                        <img
+                                            src="/images/convenio3.jpeg"
+                                            alt="Carrera del dia del psicologo"
+                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
+                                        />
+                                    </div>
 
-                                    <p>
-                                        Un sistema que ha estado sometido durante semanas o meses a una carga elevada de estrés puede entrar
-                                        en un estado de saturación fisiológica y psicológica. Cuando el cortisol excede sus niveles funcionales y se mantiene elevado por tiempo prolongado, el organismo pierde su capacidad de autorregulación eficiente. Es aquí donde puede aparecer el burnout deportivo: agotamiento emocional, desmotivación, irritabilidad, bajo
-                                        rendimiento y una desconexión progresiva del propósito.
-                                    </p>
-
-                                <p>
-                                    Desde la fisiología del estrés, el cuerpo no se “apaga” de un día para otro. Un sistema sobrecargado necesita tiempo para restablecer su
-                                    equilibrio neuroendocrino. En términos generales, un periodo aproximado de 3 a 4 semanas de reducción
-                                    significativa de carga física y psicológica puede favorecer la regulación del sistema, permitiendo que el organismo “limpie” el exceso acumulado de activación.
-
-                                </p>
-
-                                <p>
-                                    Por eso, el descanso no es debilidad. Es estrategia.
-
-                                </p>
-
-                                <p>
-                                    Incorporar periodos de desintoxicación física y emocional dentro de la planificación deportiva no solo
-                                    previene la saturación, sino que protege la longevidad del atleta. La recuperación consciente —que
-                                    incluye sueño de calidad, reducción de presión competitiva, apoyo psicológico y reconexión con el disfrute— es parte del entrenamiento invisible que
-                                    sostiene el rendimiento sostenible.
-                                </p>
-
-                                <p>
-                                    En psicología deportiva entendemos que no se trata solo de cuánto puede soportar un atleta,
-                                    sino de cuánto puede recuperarse.
-                                </p>
-
-                                <p><strong>
-                                    Porque el verdadero alto rendimiento no es resistir hasta romperse,
-                                    sino saber cuándo pausar para volver más fuerte
-                                </strong>
-                                </p>
+                                    <div>
+                                        <img
+                                            src="/images/convenio1.jpg"
+                                            alt="Carrera del dia del psicologo"
+                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
+                                        />
+                                    </div>
+                                </Carousel>
                             </div>
                         </div>
+                        {/*<div className="order-1 lg:order-2">*/}
+                        {/*    <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Burnout, cortisol y la importancia de la desintoxicación emocional en el atleta</h2>*/}
+                        {/*    <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">*/}
+                        {/*        <h3><strong>Psic. Aralia Velasco</strong></h3>*/}
+                        {/*        <h3><strong> Especialista en psicología deportiva</strong> </h3>*/}
+                        {/*        <p className="wrap-break-word text-justify">*/}
+                        {/*            En el alto rendimiento, el estrés no siempre es el enemigo. En dosis adecuadas, el cortisol —la*/}
+                        {/*            hormona asociada a la activación y la respuesta ante el desafío— permite al atleta estar alerta,*/}
+                        {/*            concentrado y preparado para competir.*/}
+                        {/*            El problema surge cuando esta activación se vuelve crónica.*/}
+                        {/*        </p>*/}
+
+                        {/*            <p>*/}
+                        {/*                Un sistema que ha estado sometido durante semanas o meses a una carga elevada de estrés puede entrar*/}
+                        {/*                en un estado de saturación fisiológica y psicológica. Cuando el cortisol excede sus niveles funcionales y se mantiene elevado por tiempo prolongado, el organismo pierde su capacidad de autorregulación eficiente. Es aquí donde puede aparecer el burnout deportivo: agotamiento emocional, desmotivación, irritabilidad, bajo*/}
+                        {/*                rendimiento y una desconexión progresiva del propósito.*/}
+                        {/*            </p>*/}
+
+                        {/*        <p>*/}
+                        {/*            Desde la fisiología del estrés, el cuerpo no se “apaga” de un día para otro. Un sistema sobrecargado necesita tiempo para restablecer su*/}
+                        {/*            equilibrio neuroendocrino. En términos generales, un periodo aproximado de 3 a 4 semanas de reducción*/}
+                        {/*            significativa de carga física y psicológica puede favorecer la regulación del sistema, permitiendo que el organismo “limpie” el exceso acumulado de activación.*/}
+
+                        {/*        </p>*/}
+
+                        {/*        <p>*/}
+                        {/*            Por eso, el descanso no es debilidad. Es estrategia.*/}
+
+                        {/*        </p>*/}
+
+                        {/*        <p>*/}
+                        {/*            Incorporar periodos de desintoxicación física y emocional dentro de la planificación deportiva no solo*/}
+                        {/*            previene la saturación, sino que protege la longevidad del atleta. La recuperación consciente —que*/}
+                        {/*            incluye sueño de calidad, reducción de presión competitiva, apoyo psicológico y reconexión con el disfrute— es parte del entrenamiento invisible que*/}
+                        {/*            sostiene el rendimiento sostenible.*/}
+                        {/*        </p>*/}
+
+                        {/*        <p>*/}
+                        {/*            En psicología deportiva entendemos que no se trata solo de cuánto puede soportar un atleta,*/}
+                        {/*            sino de cuánto puede recuperarse.*/}
+                        {/*        </p>*/}
+
+                        {/*        <p><strong>*/}
+                        {/*            Porque el verdadero alto rendimiento no es resistir hasta romperse,*/}
+                        {/*            sino saber cuándo pausar para volver más fuerte*/}
+                        {/*        </strong>*/}
+                        {/*        </p>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                 </section>
 
