@@ -393,116 +393,152 @@ export default function App() {
                     </div>
                 </section>
 
-                <section id="about" className="bg-white px-6 py-20 lg:px-8 dark:bg-[#161615]">
-                    <div className="mx-auto max-w-7xl grid items-center gap-12 p-5 lg:grid-cols-2">
-                        <div className="order-2 lg:order-1 w-full min-w-0">
-                            <div className="w-full min-w-0">
-                                <Carousel
-                                    swipeable={true}
-                                    draggable={true}
-                                    showDots={true}
-                                    infinite={true}
-                                    autoPlay={true}
-                                    autoPlaySpeed={2000}
-                                    containerClass="carousel-container"
-                                    itemClass="carousel-item-padding"
-                                    responsive={responsive}>
-                                    <div>
-                                        <img
-                                            src="/images/convenio1.jpeg"
-                                            alt="Carrera del dia del psicologo"
-                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
-                                        />
+                <section id="about" className="bg-white px-4 py-12 md:px-6 md:py-20 lg:px-8 dark:bg-[#161615]">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16">
+
+                            {/* Columna de Imagen/Carrusel: Sticky en LG */}
+                            <div className="w-full lg:w-5/12 lg:sticky lg:top-10 order-2 lg:order-1">
+                                <div className="relative overflow-hidden rounded-2xl shadow-xl transition-shadow hover:shadow-2xl">
+                                    <Carousel
+                                        swipeable={true}
+                                        draggable={true}
+                                        showDots={true}
+                                        infinite={true}
+                                        autoPlay={true}
+                                        autoPlaySpeed={4000}
+                                        containerClass="carousel-container"
+                                        responsive={responsive}
+                                    >
+                                        <div className="h-full w-full">
+                                            <img
+                                                src="/images/carrusel1.jpeg"
+                                                alt="Carrera del dia del psicologo"
+                                                className="h-full w-full object-cover"
+                                            />
+                                        </div>
+                                        <div className="h-full w-full">
+                                            <img
+                                                src="/images/carrusel2.jpeg"
+                                                alt="Carrera del dia del psicologo"
+                                                className="h-full w-full object-cover"
+                                            />
+                                        </div>
+                                        <div className="h-full w-full">
+                                            <img
+                                                src="/images/carrusel3.jpeg"
+                                                alt="Carrera del dia del psicologo"
+                                                className="h-full w-full object-cover"
+                                            />
+                                        </div>
+                                    </Carousel>
+                                </div>
+                                <p className="mt-4 text-center text-xs md:text-sm italic text-stone-500 dark:text-zinc-500">
+                                    Registro de actividades y convenios deportivos en el estado de Oaxaca.
+                                </p>
+                            </div>
+
+                            {/* Columna de Texto: Artículo de Investigación */}
+                            <div className="w-full lg:w-7/12 order-1 lg:order-2">
+                                <header className="mb-8 border-b border-stone-100 pb-6 dark:border-zinc-800">
+                                    <h2 className="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-stone-900 md:text-4xl lg:text-5xl dark:text-white">
+                                        El entrenador deportivo en Oaxaca: <span className="text-[#055c9d]">héroe invisible</span> entre la cancha, la violencia y el abandono
+                                    </h2>
+                                    <div className="flex flex-col space-y-1">
+                                        <span className="text-lg font-bold text-stone-800 dark:text-stone-200">Psic. Aralia Velasco</span>
+                                        <span className="text-sm font-semibold uppercase tracking-widest text-[#055c9d]">
+                            Especialista en psicología deportiva
+                        </span>
                                     </div>
-                                    <div>
-                                        <img
-                                            src="/images/convenio2.jpeg"
-                                            alt="Carrera del dia del psicologo"
-                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
-                                        />
+                                </header>
+
+                                <div className="space-y-6 text-base leading-relaxed text-stone-700 md:text-lg dark:text-zinc-400">
+                                    <p className="text-justify font-medium text-stone-900 dark:text-stone-300">
+                                        En Oaxaca, el silbato del entrenador no solo marca el inicio de un entrenamiento.
+                                        Marca una pausa en la violencia, un respiro en medio de la precariedad, una oportunidad donde muchas veces no la hay.
+                                    </p>
+
+                                    <p className="text-justify">
+                                        Aquí, el entrenador deportivo no es solo técnico. Es psicólogo sin título, mediador familiar sin reconocimiento,
+                                        líder comunitario sin salario digno. Es, en muchos casos, la única figura estable en la vida de niñas, niños y jóvenes atravesados por contextos complejos.
+                                    </p>
+
+                                    <h3 className="pt-4 text-2xl font-bold text-stone-900 dark:text-white">
+                                        Y sin embargo, sigue siendo invisible.
+                                    </h3>
+
+                                    <h4 className="text-xl font-semibold text-[#055c9d]">Entrenar mentes, no solo cuerpos</h4>
+
+                                    <p className="text-justify">
+                                        Hablar de deporte en estos contextos sin considerar la psicología deportiva es quedarse en la superficie.
+                                        El entrenador en Oaxaca trabaja con jóvenes que han normalizado la violencia y cargan ansiedad o abandono.
+                                    </p>
+
+                                    {/* Lista con borde lateral en el color solicitado */}
+                                    <ul className="grid grid-cols-1 gap-3 border-l-2 border-[#055c9d] py-2 pl-6 italic">
+                                        <li>Han normalizado la violencia</li>
+                                        <li>Cargan ansiedad, frustración o abandono</li>
+                                        <li>Buscan pertenecer a algo que no los expulse</li>
+                                    </ul>
+
+                                    <p className="text-justify">
+                                        Cada entrenamiento es una intervención emocional: enseñar disciplina es enseñar autocontrol, fomentar el equipo
+                                        es reconstruir vínculos y celebrar logros es reparar autoestima.
+                                    </p>
+
+                                    <div className="rounded-xl bg-blue-50/30 p-6 dark:bg-[#055c9d]/5">
+                                        <p className="text-justify leading-relaxed">
+                                            <span className="font-bold text-[#055c9d]">La contradicción:</span> se espera que el entrenador sostenga procesos psicológicos complejos… sin haber sido formado para ello.
+                                            Llegan a la cancha con historias de migración, negligencia y presión económica.
+                                        </p>
                                     </div>
-                                </Carousel>
+
+                                    <p className="text-justify">
+                                        La cancha se vuelve un sistema terapéutico informal. Pero sin estructura, sin red de apoyo, sin acompañamiento profesional.
+                                    </p>
+
+                                    <h3 className="pt-6 text-xl font-bold text-stone-900 dark:text-white">
+                                        Entrenar en Oaxaca no es lo mismo que en contextos privilegiados
+                                    </h3>
+
+                                    <div className="space-y-4">
+                                        <p>En este contexto:</p>
+                                        <ul className="list-inside list-disc space-y-1 pl-4 decoration-[#055c9d]">
+                                            <li>Faltan áreas deportivas equipadas</li>
+                                            <li>El equipamiento es limitado</li>
+                                            <li>La violencia es una constante</li>
+                                        </ul>
+                                    </div>
+
+                                    <p className="text-justify font-semibold text-stone-900 dark:text-stone-200">
+                                        Si realmente se quiere apostar por el deporte como herramienta de transformación social, el entrenador debe dejar de ser invisible.
+                                    </p>
+
+                                    {/* Sección de Necesidades con el nuevo acento de color */}
+                                    <div className="mt-10 space-y-6 border-t border-stone-100 pt-8 dark:border-zinc-800">
+                                        <h3 className="text-2xl font-bold dark:text-white">Se necesita:</h3>
+                                        <div className="grid gap-6 sm:grid-cols-2">
+                                            <div className="space-y-2">
+                                                <span className="text-sm font-black text-[#055c9d]">01</span>
+                                                <p><strong>Formación real:</strong> Capacitación en psicología deportiva e intervención familiar.</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <span className="text-sm font-black text-[#055c9d]">02</span>
+                                                <p><strong>Política pública:</strong> Salarios dignos, seguridad social y programas estructurados.</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <span className="text-sm font-black text-[#055c9d]">03</span>
+                                                <p><strong>Trabajo en red:</strong> Articulación con escuelas y psicólogos.</p>
+                                            </div>
+                                            <div className="space-y-2">
+                                                <span className="text-sm font-black text-[#055c9d]">04</span>
+                                                <p><strong>Reconocimiento:</strong> Nombrar lo que ya hacen: sostener comunidades.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="order-2 lg:order-1 w-full min-w-0">
-                            <div className="w-full min-w-0">
-                                <Carousel
-                                    swipeable={true}
-                                    draggable={true}
-                                    showDots={true}
-                                    infinite={true}
-                                    autoPlay={true}
-                                    autoPlaySpeed={2000}
-                                    containerClass="carousel-container"
-                                    itemClass="carousel-item-padding"
-                                    responsive={responsive}>
-                                    <div>
-                                        <img
-                                            src="/images/convenio3.jpeg"
-                                            alt="Carrera del dia del psicologo"
-                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
-                                        />
-                                    </div>
-
-                                    <div>
-                                        <img
-                                            src="/images/convenio4.jpeg"
-                                            alt="Carrera del dia del psicologo"
-                                            className="aspect-square h-auto w-full rounded-lg object-cover shadow-2xl"
-                                        />
-                                    </div>
-                                </Carousel>
-                            </div>
-                        </div>
-                        {/*<div className="order-1 lg:order-2">*/}
-                        {/*    <h2 className="mb-6 text-3xl font-semibold lg:text-5xl wrap-break-word">Burnout, cortisol y la importancia de la desintoxicación emocional en el atleta</h2>*/}
-                        {/*    <div className="space-y-4 text-[#706f6c] dark:text-[#A1A09A] max-w-full">*/}
-                        {/*        <h3><strong>Psic. Aralia Velasco</strong></h3>*/}
-                        {/*        <h3><strong> Especialista en psicología deportiva</strong> </h3>*/}
-                        {/*        <p className="wrap-break-word text-justify">*/}
-                        {/*            En el alto rendimiento, el estrés no siempre es el enemigo. En dosis adecuadas, el cortisol —la*/}
-                        {/*            hormona asociada a la activación y la respuesta ante el desafío— permite al atleta estar alerta,*/}
-                        {/*            concentrado y preparado para competir.*/}
-                        {/*            El problema surge cuando esta activación se vuelve crónica.*/}
-                        {/*        </p>*/}
-
-                        {/*            <p>*/}
-                        {/*                Un sistema que ha estado sometido durante semanas o meses a una carga elevada de estrés puede entrar*/}
-                        {/*                en un estado de saturación fisiológica y psicológica. Cuando el cortisol excede sus niveles funcionales y se mantiene elevado por tiempo prolongado, el organismo pierde su capacidad de autorregulación eficiente. Es aquí donde puede aparecer el burnout deportivo: agotamiento emocional, desmotivación, irritabilidad, bajo*/}
-                        {/*                rendimiento y una desconexión progresiva del propósito.*/}
-                        {/*            </p>*/}
-
-                        {/*        <p>*/}
-                        {/*            Desde la fisiología del estrés, el cuerpo no se “apaga” de un día para otro. Un sistema sobrecargado necesita tiempo para restablecer su*/}
-                        {/*            equilibrio neuroendocrino. En términos generales, un periodo aproximado de 3 a 4 semanas de reducción*/}
-                        {/*            significativa de carga física y psicológica puede favorecer la regulación del sistema, permitiendo que el organismo “limpie” el exceso acumulado de activación.*/}
-
-                        {/*        </p>*/}
-
-                        {/*        <p>*/}
-                        {/*            Por eso, el descanso no es debilidad. Es estrategia.*/}
-
-                        {/*        </p>*/}
-
-                        {/*        <p>*/}
-                        {/*            Incorporar periodos de desintoxicación física y emocional dentro de la planificación deportiva no solo*/}
-                        {/*            previene la saturación, sino que protege la longevidad del atleta. La recuperación consciente —que*/}
-                        {/*            incluye sueño de calidad, reducción de presión competitiva, apoyo psicológico y reconexión con el disfrute— es parte del entrenamiento invisible que*/}
-                        {/*            sostiene el rendimiento sostenible.*/}
-                        {/*        </p>*/}
-
-                        {/*        <p>*/}
-                        {/*            En psicología deportiva entendemos que no se trata solo de cuánto puede soportar un atleta,*/}
-                        {/*            sino de cuánto puede recuperarse.*/}
-                        {/*        </p>*/}
-
-                        {/*        <p><strong>*/}
-                        {/*            Porque el verdadero alto rendimiento no es resistir hasta romperse,*/}
-                        {/*            sino saber cuándo pausar para volver más fuerte*/}
-                        {/*        </strong>*/}
-                        {/*        </p>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                 </section>
 
@@ -510,13 +546,15 @@ export default function App() {
                 <section className="relative overflow-hidden bg-white px-6 py-24 lg:px-8 dark:bg-[#161615]">
                     {/* Decorative background elements */}
                     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#055c9d]/5 blur-3xl" />
-                        <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#0577d4]/5 blur-3xl" />
-                        <div className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#055c9d]/5 blur-2xl" />
+                        <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#055c9d]/5 blur-3xl"/>
+                        <div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-[#0577d4]/5 blur-3xl"/>
+                        <div
+                            className="absolute top-1/2 left-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#055c9d]/5 blur-2xl"/>
                     </div>
 
                     <div className="relative mx-auto max-w-4xl text-center">
-        <span className="mb-6 inline-block rounded-full border border-[#055c9d]/30 bg-[#055c9d]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#055c9d] dark:border-[#055c9d]/40 dark:bg-[#055c9d]/20">
+        <span
+            className="mb-6 inline-block rounded-full border border-[#055c9d]/30 bg-[#055c9d]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#055c9d] dark:border-[#055c9d]/40 dark:bg-[#055c9d]/20">
             Convenios Deportivos
         </span>
 
@@ -524,8 +562,10 @@ export default function App() {
                             ¿Tu equipo está listo para{' '}
                             <span className="relative inline-block text-[#055c9d]">
                 ganar en equipo?
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 9C50 3 150 1 298 9" stroke="#055c9d" strokeWidth="3" strokeLinecap="round" opacity="0.4" />
+                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 9C50 3 150 1 298 9" stroke="#055c9d" strokeWidth="3" strokeLinecap="round"
+                          opacity="0.4"/>
                 </svg>
             </span>
                         </h2>
@@ -541,11 +581,12 @@ export default function App() {
                             acompañando a cada atleta y cuerpo técnico hacia su máximo potencial.
                         </p>
 
-                        <div className="mb-12 flex flex-wrap justify-center gap-8 border-y border-[#e3e3e0] py-8 dark:border-[#3E3E3A]">
+                        <div
+                            className="mb-12 flex flex-wrap justify-center gap-8 border-y border-[#e3e3e0] py-8 dark:border-[#3E3E3A]">
                             {[
-                                { value: '10+', label: 'Equipos activos' },
+                                {value: '10+', label: 'Equipos activos'},
 
-                                { value: '100%', label: 'Compromiso profesional' },
+                                {value: '100%', label: 'Compromiso profesional'},
                             ].map((stat, i) => (
                                 <div key={i} className="text-center">
                                     <div className="text-3xl font-bold text-[#055c9d]">{stat.value}</div>
