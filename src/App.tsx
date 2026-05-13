@@ -618,160 +618,146 @@ export default function App() {
                     <div className="mx-auto max-w-7xl">
                         <div className="mb-16 text-center">
                             <h2 className="mb-4 text-3xl font-semibold lg:text-5xl">¿Qué Ofrecemos?</h2>
+                            <p className="text-lg text-[#706f6c] dark:text-[#A1A09A]">
+                                Herramientas y acompañamiento adaptados a cada parte del ecosistema deportivo.
+                            </p>
                         </div>
 
-                        <div className="grid gap-8 lg:grid-cols-3">
+                        <div className="grid gap-6 md:grid-cols-3">
                             {/* Para Atletas */}
-                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white shadow-sm dark:border-[#3E3E3A] dark:bg-[#161615]">
-                                <div className="bg-[#055c9d] px-6 py-4">
-                                    <h3 className="text-xl font-semibold text-white">Para Atletas</h3>
+                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white transition-all hover:border-[#c5c5c0] dark:border-[#3E3E3A] dark:bg-[#161615] dark:hover:border-[#555550]">
+                                <div className="flex items-center gap-3 border-b border-[#e3e3e0] px-6 py-5 dark:border-[#3E3E3A]">
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#055c9d]/10">
+                                        <svg className="h-5 w-5 text-[#055c9d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-base font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Para atletas</h3>
                                 </div>
-                                <div className="p-6">
-                                    <ul className="space-y-3 text-[#706f6c] dark:text-[#A1A09A]">
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Control de ansiedad y estrés competitivo</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Fortalecimiento de la autoestima y confianza</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Técnicas de concentración y visualización</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Rutinas mentales para la competencia y el entrenamiento</span>
-                                        </li>
+                                <div className="px-6 py-5">
+                                    <ul className="space-y-3">
+                                        {[
+                                            'Control de ansiedad y estrés competitivo',
+                                            'Fortalecimiento de la autoestima y confianza',
+                                            'Técnicas de concentración y visualización',
+                                            'Rutinas mentales para la competencia y el entrenamiento',
+                                        ].map((item, i) => (
+                                            <li key={i} className="flex items-start gap-2.5 text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]" />
+                                                {item}
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
 
                             {/* Para Familias */}
-                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white shadow-sm dark:border-[#3E3E3A] dark:bg-[#161615]">
-                                <div className="bg-[#055c9d] px-6 py-4">
-                                    <h3 className="text-xl font-semibold text-white">Para Familias</h3>
+                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white transition-all hover:border-[#c5c5c0] dark:border-[#3E3E3A] dark:bg-[#161615] dark:hover:border-[#555550]">
+                                <div className="flex items-center gap-3 border-b border-[#e3e3e0] px-6 py-5 dark:border-[#3E3E3A]">
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#055c9d]/10">
+                                        <svg className="h-5 w-5 text-[#055c9d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-base font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Para familias</h3>
                                 </div>
-                                <div className="p-6">
-                                    <ul className="space-y-3 text-[#706f6c] dark:text-[#A1A09A]">
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Acompañamiento emocional durante la formación deportiva</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Estrategias para apoyar sin presionar</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Comunicación efectiva con hijos deportistas</span>
-                                        </li>
+                                <div className="px-6 py-5">
+                                    <ul className="space-y-3">
+                                        {[
+                                            'Acompañamiento emocional durante la formación deportiva',
+                                            'Estrategias para apoyar sin presionar',
+                                            'Comunicación efectiva con hijos deportistas',
+                                        ].map((item, i) => (
+                                            <li key={i} className="flex items-start gap-2.5 text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]" />
+                                                {item}
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
 
                             {/* Para Entrenadores */}
-                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white shadow-sm dark:border-[#3E3E3A] dark:bg-[#161615]">
-                                <div className="bg-[#055c9d] px-6 py-4">
-                                    <h3 className="text-xl font-semibold text-white">Para Entrenadores</h3>
+                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white transition-all hover:border-[#c5c5c0] dark:border-[#3E3E3A] dark:bg-[#161615] dark:hover:border-[#555550]">
+                                <div className="flex items-center gap-3 border-b border-[#e3e3e0] px-6 py-5 dark:border-[#3E3E3A]">
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#055c9d]/10">
+                                        <svg className="h-5 w-5 text-[#055c9d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-base font-medium text-[#1b1b18] dark:text-[#EDEDEC]">Para entrenadores</h3>
                                 </div>
-                                <div className="p-6">
-                                    <ul className="space-y-3 text-[#706f6c] dark:text-[#A1A09A]">
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Liderazgo emocionalmente inteligente</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Manejo de conflictos y motivación grupal</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <span className="mt-1 mr-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]"></span>
-                                            <span>Técnicas de retroalimentación positiva</span>
-                                        </li>
+                                <div className="px-6 py-5">
+                                    <ul className="space-y-3">
+                                        {[
+                                            'Liderazgo emocionalmente inteligente',
+                                            'Manejo de conflictos y motivación grupal',
+                                            'Técnicas de retroalimentación positiva',
+                                        ].map((item, i) => (
+                                            <li key={i} className="flex items-start gap-2.5 text-sm text-[#706f6c] dark:text-[#A1A09A]">
+                                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#055c9d]" />
+                                                {item}
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
+                        {/* Divider */}
+                        <div className="my-16 border-t border-[#e3e3e0] dark:border-[#3E3E3A]" />
+
                         {/* Modalidades Section */}
-                        <div className="mt-16">
-                            <div className="mb-8 text-center">
-                                <h2 className="mb-4 text-3xl font-semibold lg:text-5xl">Modalidades</h2>
-                            </div>
+                        <div className="mb-12 text-center">
+                            <h2 className="text-3xl font-semibold lg:text-5xl">Modalidades</h2>
+                        </div>
 
-                            <div className="overflow-hidden rounded-lg border border-[#e3e3e0] bg-white shadow-sm dark:border-[#3E3E3A] dark:bg-[#161615]">
-                                <div className="grid gap-6 p-8 md:grid-cols-2">
-                                    <div className="flex items-start">
-                                        <div className="mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#055c9d]">
-                                            <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1 font-semibold">Sesiones individuales o grupales</h4>
-                                            <p className="text-sm text-[#706f6c] dark:text-[#A1A09A]">Adaptadas a tus necesidades específicas</p>
-                                        </div>
+                        <div className="grid gap-4 md:grid-cols-2">
+                            {[
+                                {
+                                    title: 'Sesiones individuales o grupales',
+                                    description: 'Adaptadas a tus necesidades específicas y etapa competitiva.',
+                                    icon: (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    ),
+                                },
+                                {
+                                    title: 'Talleres para clubes y academias',
+                                    description: 'Programas especializados diseñados para equipos completos.',
+                                    icon: (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    ),
+                                },
+                                {
+                                    title: 'Charlas educativas',
+                                    description: 'Para padres, entrenadores y comunidades deportivas.',
+                                    icon: (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                    ),
+                                },
+                                {
+                                    title: 'Evaluación psicológica deportiva',
+                                    description: 'Personalizada y profesional, con seguimiento continuo.',
+                                    icon: (
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                    ),
+                                },
+                            ].map((item, i) => (
+                                <div
+                                    key={i}
+                                    className="flex items-start gap-4 rounded-lg border border-[#e3e3e0] bg-white p-5 transition-all hover:border-[#c5c5c0] dark:border-[#3E3E3A] dark:bg-[#161615] dark:hover:border-[#555550]"
+                                >
+                                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-[#055c9d]/10">
+                                        <svg className="h-5 w-5 text-[#055c9d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            {item.icon}
+                                        </svg>
                                     </div>
-
-                                    <div className="flex items-start">
-                                        <div className="mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#055c9d]">
-                                            <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1 font-semibold">Talleres para clubes y academias</h4>
-                                            <p className="text-sm text-[#706f6c] dark:text-[#A1A09A]">Programas especializados para equipos</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start">
-                                        <div className="mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#055c9d]">
-                                            <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1 font-semibold">Charlas educativas</h4>
-                                            <p className="text-sm text-[#706f6c] dark:text-[#A1A09A]">Para padres y entrenadores</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start">
-                                        <div className="mr-4 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#055c9d]">
-                                            <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth={2}
-                                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                                                />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h4 className="mb-1 font-semibold">Evaluación psicológica deportiva</h4>
-                                            <p className="text-sm text-[#706f6c] dark:text-[#A1A09A]">Personalizada y profesional</p>
-                                        </div>
+                                    <div>
+                                        <h4 className="mb-1 text-sm font-medium text-[#1b1b18] dark:text-[#EDEDEC]">{item.title}</h4>
+                                        <p className="text-sm text-[#706f6c] dark:text-[#A1A09A]">{item.description}</p>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>
